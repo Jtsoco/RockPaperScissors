@@ -31,7 +31,7 @@ function playRound(y, x) {
         return "It's a tie!"
     }
     else if (y === "gun") {
-        return "cheater..."
+        return "cheater... I guess you win."
     }
     else if (((y === "rock") && (x === "paper")) 
     || 
@@ -53,37 +53,95 @@ function playRound(y, x) {
     }
 }
     function game() {
+        let wins = 0;
+        let losses = 0;
+        let ties = 0;
+
         for (let i = 0; i <=5; i++){
             switch (i) {
                 case 0:
                     a = playRound();
-                    console.log (a)
+                    alert (a);
+                    if ((a.slice(0,7) === "You Win") || (a.slice(0,7) === "cheater")) {
+                        wins ++;
+                    }
+                    else if ((a.slice(0,8) === "You Lose") || (a.slice(0,2) === "Ah")) {
+                        losses ++;
+                    }
+                    else {
+                        ties ++;
+                    }
                 break;
 
                 case 1:
                     b = playRound();
-                    console.log(b);
+                    alert(b);
+                    if ((b.slice(0,7) === "You Win") || (b.slice(0,7) === "cheater")) {
+                        wins ++;
+                    }
+                    else if ((b.slice(0,8) === "You Lose") || (b.slice(0,2) === "Ah")) {
+                        losses ++;
+                    }
+                    else {
+                        ties ++;
+                    }
                     break;
                 case 2:
                     c = playRound();
-                    console.log(c);
+                    alert(c);
+                    if ((c.slice(0,7) === "You Win") || (c.slice(0,7) === "cheater")) {
+                        wins ++;
+                    }
+                    else if ((c.slice(0,8) === "You Lose") || (c.slice(0,2) === "Ah")) {
+                        losses ++;
+                    }
+                    else {
+                        ties ++;
+                    }
                     break;
                 case 3:
                     d = playRound();
-                    console.log(d);
+                    alert(d);
+                    if ((d.slice(0,7) === "You Win") || (d.slice(0,7) === "cheater")) {
+                        wins ++;
+                    }
+                    else if ((d.slice(0,8) === "You Lose") || (d.slice(0,2) === "Ah")) {
+                        losses ++;
+                    }
+                    else {
+                        ties ++;
+                    }
                     break;
                 case 4:
                     e = playRound();
-                    console.log(e);
+                    alert(e);
+                    if ((e.slice(0,7) === "You Win") || (e.slice(0,7) === "cheater")) {
+                        wins ++;
+                    }
+                    else if ((e.slice(0,8) === "You Lose") || (e.slice(0,2) === "Ah")) {
+                        losses ++;
+                    }
+                    else {
+                        ties ++;
+                    }
                 break;
 
             }
             }
-            return "Round 1 results: " + a + 
+            if (wins > losses) {
+                winMessage = "You're the winner!"
+            }
+            else if (wins < losses) {
+                winMessage = "You're the loser..."
+            }
+            else {
+                winMessage = "It's a tie! Good try!"
+            }
+            alert("Round 1 results: " + a + 
             " Round 2 results: " + b +
-            " Round 1 results: " + c +
-            " Round 1 results: " + d + 
-            " Round 1 results: " + e;
+            " Round 3 results: " + c +
+            " Round 4 results: " + d + 
+            " Round 5 results: " + e + " Total Results: " + winMessage + " Wins: " + wins + " Ties: " + ties + " Losses: " + losses)
         }
    
     
