@@ -1,4 +1,4 @@
-
+// this is the computer generated choice//
 function getComputerChoice() {
     let x = Math.floor((Math.random () * 100));
     if (x <= 33) {
@@ -19,11 +19,13 @@ function getComputerChoice() {
 
 
 }
-
+// player selection prompt is here//
 function playerSelection () {
    let playerChoice = prompt ("Please enter Rock, Paper, or Scissors.");
    return (playerChoice);
 }
+//playing a single round of the game//
+//hey future me, y and x are declared only in this function, not on a global scope. don't forget!//
 function playRound(y, x) {
      y = (playerSelection ()).toLowerCase();
      x = (getComputerChoice()).toLowerCase();
@@ -52,12 +54,14 @@ function playRound(y, x) {
         return "Ah oh no! You entered something wrong. Let's call this a loss!"
     }
 }
+//this is the game//
     function game() {
         let wins = 0;
         let losses = 0;
         let ties = 0;
 
         for (let i = 0; i <=5; i++){
+            //using switch case for easier if/else on the main 5 rounds// 
             switch (i) {
                 case 0:
                     a = playRound();
@@ -137,11 +141,13 @@ function playRound(y, x) {
             else {
                 winMessage = "It's a tie! Good try!"
             }
-            alert("Round 1 results: " + a + 
+            //this is ugly, but it works okay//
+            let results = "Round 1 results: " + a + 
             " Round 2 results: " + b +
             " Round 3 results: " + c +
             " Round 4 results: " + d + 
-            " Round 5 results: " + e + " Total Results: " + winMessage + " Wins: " + wins + " Ties: " + ties + " Losses: " + losses)
+            " Round 5 results: " + e + " Total Results: " + winMessage + " Wins: " + wins + " Ties: " + ties + " Losses: " + losses;
+            alert(results);
         }
    
     
