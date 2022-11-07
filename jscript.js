@@ -61,7 +61,7 @@ function playRound(y, x) {
         let ties = 0;
 
         for (let i = 0; i <=5; i++){
-            //using switch case for easier if/else on the main 5 rounds// 
+            //using switch case for easier if/else on the main 5 rounds. Each round's results will be represented by an alphabet letter// 
             switch (i) {
                 case 0:
                     a = playRound();
