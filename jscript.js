@@ -21,30 +21,38 @@ function getComputerChoice() {
 }
 
 function playerSelection () {
-    prompt ("Please enter Rock, Paper, or Scissors.");
-
+   let playerChoice = prompt ("Please enter Rock, Paper, or Scissors.");
+   return (playerChoice);
 }
 function game() {
-    let y = playerSelection();
-    let x = getComputerChoice();
-    if (y === x) {
-        return "Tie!"
+    let y = (playerSelection ()).toLowerCase();
+    let x = (getComputerChoice()).toLowerCase();
+    if ( x === y) {
+        return "It's a tie!"
     }
-    else if (((y = "Rock") && (x = "Paper")) 
+    else if (y === "gun") {
+        return "cheater..."
+    }
+    else if (((y === "rock") && (x === "paper")) 
     || 
-    ((y = "Paper") && (x = "Scissors")) 
-    || ((y = "Scissors") && (x = "Rock"))) {
-        return "You Lose!"
+    ((y === "paper") && (x === "scissors")) 
+    || ((y === "scissors") && (x === "rock"))) {
+        x.charAt(0) + x.split(1);
+        return "You lose!" + " " + x + " beats " + y;
+    }
+    else if (((y === "paper") && (x === "rock")) 
+    || 
+    ((y === "scissors") && (x === "paper")) 
+    || ((y === "rock") && (x === "scissors"))) {
+        y.charAt(0) + y.split(1);
+        return "You win!" + " " + y + "beats " + x; 
+    }
 
-        
+    else {
+        return "Ah E gad"
     }
-    else if (((x = "Rock") && (y = "Paper")) 
-    || 
-    ((x = "Paper") && (y = "Scissors")) 
-    || ((x = "Scissors") && (y = "Rock")))  {
-        return "Winner!"
-    }
-    else if (y = "gun") {
-        return "You win! Cheater..."
-    }
+
+    
+
 }
+
