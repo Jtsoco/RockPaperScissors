@@ -37,15 +37,15 @@ function game() {
     || 
     ((y === "paper") && (x === "scissors")) 
     || ((y === "scissors") && (x === "rock"))) {
-        x.charAt(0) + x.split(1);
-        return "You lose!" + " " + x + " beats " + y;
+        
+        return "You Lose!" + " " + x.charAt(0).toUpperCase() + x.slice(1) + " beats " + y.charAt(0).toUpperCase() + y.slice(1);
     }
     else if (((y === "paper") && (x === "rock")) 
     || 
     ((y === "scissors") && (x === "paper")) 
     || ((y === "rock") && (x === "scissors"))) {
         y.charAt(0) + y.split(1);
-        return "You win!" + " " + y + "beats " + x; 
+        return "You Win!" + " " + y.charAt(0).toUpperCase() + y.slice(1) + "beats " + x.charAt(0).toUpperCase() + x.slice(1); 
     }
 
     else {
