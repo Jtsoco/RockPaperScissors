@@ -54,6 +54,54 @@ function playRound(y, x) {
         return "Ah oh no! You entered something wrong. Let's call this a loss!"
     }
 }
+
+
+
+//This is Javascript for image buttons
+
+
+
+const rockImg = document.querySelector(".rockImg");
+//document.querySelector('rockImg').addEventListener("click", ) 
+rockImg.addEventListener('click', playerChoiceRock);
+
+function playerChoiceRock(e) {console.log(e)};
+
+
+const scissorsImg = document.querySelector(".scissorsImg");
+//document.querySelector('rockImg').addEventListener("click", ) 
+rockImg.addEventListener('click', playerChoiceScissors);
+
+function playerChoiceScissors (e) {console.log(e)};
+
+const paperImg = document.querySelector(".paperImg");
+//document.querySelector('rockImg').addEventListener("click", ) 
+rockImg.addEventListener('click', playerChoicePaper);
+
+function playerChoicePaper(e) { console.log(e)
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 //this is the game//
     function game() {
         let wins = 0;

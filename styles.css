@@ -14,7 +14,7 @@ body{
     width: 100%;
     
     margin-top: 0px;
-    height: 350px;
+    height: 250px;
     background-image: 
     linear-gradient(to bottom right, white, rgb(113, 113, 253));
     
@@ -67,13 +67,46 @@ body{
     margin-bottom: auto;
 }
 
+.rockImg, .scissorsImg, .paperImg { min-width: 300px;
+           min-height: auto;
+           max-width: 300px;
+           max-height: auto;
+           border: 5px solid black;
+           border-radius: 5px;
+           margin: 40px 30px;
+           margin-bottom: 0;
+           transition: .7s;
+           
+}
+
+.rockImg:hover, .scissorsImg:hover, .paperImg:hover {
+    scale: 1.3;
+}
+
+.scissorsImg {
+    max-height: 230px;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    background-color: white;
+    
+    
+}
+
+.paperImg {
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
+
 .paperScissors {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     width: auto;
     background-color: pink;
     flex: 1;
     margin: auto;
+    padding-right: auto;
+    padding-left: auto;
+    
 }
 
 .paper {
@@ -81,6 +114,9 @@ body{
     margin: auto;
     flex: 1;
     width: auto;
+    margin-right: auto;
+    
+    
 
 }
 
@@ -88,6 +124,7 @@ body{
     display: flex;
     margin: auto;
     width: auto;
+    
 }
 
 .enemy {
@@ -104,6 +141,18 @@ body{
 
 
 .bottom {display: flex;
+justify-content: center;
 
-
+}
+.score, .playerDecision {
+    min-width: 200px;
+    min-height: 200px;
+    border: 5px solid black;
+    border-radius: 5px;
+    text-align: center;
+    margin: 20px 20px;
+}
+.scoreTitle, .playerDecisionTop {
+    margin: 0;
+    border-bottom: 5px solid black;
 }
