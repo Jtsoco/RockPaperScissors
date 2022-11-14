@@ -65,20 +65,57 @@ const rockImg = document.querySelector(".rockImg");
 //document.querySelector('rockImg').addEventListener("click", ) 
 rockImg.addEventListener('click', playerChoiceRock);
 
-function playerChoiceRock(e) {console.log(e)};
+function playerChoiceRock(e) {console.log(e);
+    let playerImgChoice = document.querySelector(".playerImgChoice"); 
+    playerImgChoice.src = "images/rock.jpg";
+    
+
+
+};
 
 
 const scissorsImg = document.querySelector(".scissorsImg");
 //document.querySelector('rockImg').addEventListener("click", ) 
-rockImg.addEventListener('click', playerChoiceScissors);
+scissorsImg.addEventListener('click', playerChoiceScissors) 
 
-function playerChoiceScissors (e) {console.log(e)};
+function playerChoiceScissors (e) {console.log(e);
+    
+let playerImgChoice = document.querySelector(".playerImgChoice"); 
+playerImgChoice.src = "images/scissors.png";
+return
+
+};
 
 const paperImg = document.querySelector(".paperImg");
 //document.querySelector('rockImg').addEventListener("click", ) 
-rockImg.addEventListener('click', playerChoicePaper);
+paperImg.addEventListener('click', playerChoicePaper);
 
-function playerChoicePaper(e) { console.log(e)
+function playerChoicePaper(e) { console.log(e);
+    let playerImgChoice = document.querySelector(".playerImgChoice"); 
+playerImgChoice.src = "images/paper.jpg";
+
+
+}
+
+//This will be the AI selection picked by fight button
+const run = document.querySelector(".run");
+run.addEventListener('click', runGame);
+let enemyImg = document.querySelector(".enemyImg")
+function runGame(e) {
+    console.log(e);
+ enemyAnswer = getComputerChoice();
+if (enemyAnswer === "Rock") {
+    enemyImg.src = "images/rock.jpg";
+}
+else if (enemyAnswer === "Paper") {
+    enemyImg.src = "images/paper.jpg";
+
+}
+
+else if (enemyAnswer === "Scissors") {
+    enemyImg.src = "images/scissors.png"
+}
+else {"Error"}
 
 }
 

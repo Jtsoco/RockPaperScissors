@@ -127,6 +127,19 @@ body{
     
 }
 
+
+.operation {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    scale: 1.4;
+    gap: 30px;
+   
+}
+
+
+
 .enemy {
     width: auto;
     display: flex;
@@ -158,10 +171,18 @@ justify-content: center;
 
 }
 
-.rockImgChoice, .paperImgChoice {
+.enemyImg {
+    height: 300px;
+    width: auto;
+    border: 10px solid black;
+    border-radius: 8px;
+}
+
+.playerImgChoice {
     height: auto;
-    width: 200px;
+    max-width: 200px;
     margin: auto;
+    max-height: 150px;
     
     
     
