@@ -100,7 +100,7 @@ playerChoice = "paper"
 
 }
 
-//This will be the AI selection picked by fight button
+//Running the game through the fight button
 const run = document.querySelector(".run");
 run.addEventListener('click', runGame);
 let enemyImg = document.querySelector(".enemyImg")
@@ -109,9 +109,15 @@ results = document.getElementById("results");
 
 function runGame(e) {
     runEnemy();
-   results.innerHTML = fightRound();
+    //this next line puts the results into the results box
+   
+   
+   fought = fightRound();
 
+   fightRoundResults = scoreBoard();
+   results.innerHTML = fought + "<br>" +fightRoundResults;
 
+//results.innerHTML = fightRound() + \n + scoreBoard();
 
 };
 
@@ -165,7 +171,148 @@ function fightRound (y, x) {
 }
 
 
+//Next, make a looping function that uses the result of fightRound
+//loop it with wins and losses, and round 1:
+//keep track up to five games, then restart
+i = 0,
+wins = 0;
+losses = 0
+ties = 0;
 
+function scoreBoard() {
+
+   
+    a = fought;
+    if (i === 0) {
+             
+        
+            if ((a.slice(0,7) === "You Win") || (a.slice(0,7) === "cheater")) {
+                            wins ++;
+                            i++;
+                            
+                        }
+                        else if ((a.slice(0,8) === "You Lose") || (a.slice(0,2) === "Ah")) {
+                            losses ++;
+                            i++;
+                            
+                        }
+                        else {
+                            ties ++;
+                            i++;
+                        }
+                        
+                        return " Wins: " + wins + " Ties: " + ties + " Losses: " + losses;
+    }
+
+    else if (i === 1) {
+       
+       if ((a.slice(0,7) === "You Win") || (a.slice(0,7) === "cheater")) {
+                       wins ++;
+                       i++;
+                   }
+                   else if ((a.slice(0,8) === "You Lose") || (a.slice(0,2) === "Ah")) {
+                       losses ++;
+                       i++;
+                   }
+                   else {
+                       ties ++;
+                       i++;
+                   }
+                  
+                   return " Wins: " + wins + " Ties: " + ties + " Losses: " + losses;
+}
+
+    if (i === 2) {
+    
+        if ((a.slice(0,7) === "You Win") || (a.slice(0,7) === "cheater")) {
+                   wins ++;
+                   i++;
+               }
+               else if ((a.slice(0,8) === "You Lose") || (a.slice(0,2) === "Ah")) {
+                   losses ++;
+                   i++;
+               }
+               else {
+                   ties ++;
+                   i++;
+               }
+               
+               return " Wins: " + wins + " Ties: " + ties + " Losses: " + losses;
+}
+
+    if (i === 3) {
+    
+        if ((a.slice(0,7) === "You Win") || (a.slice(0,7) === "cheater")) {
+                   wins ++;
+                   i++;
+               }
+               else if ((a.slice(0,8) === "You Lose") || (a.slice(0,2) === "Ah")) {
+                   losses ++;
+                   i++;
+               }
+               else {
+                   ties ++;
+                   i++;
+               }
+               
+               return " Wins: " + wins + " Ties: " + ties + " Losses: " + losses;
+}
+
+    if (i === 4) {
+    
+        if ((a.slice(0,7) === "You Win") || (a.slice(0,7) === "cheater")) {
+                   wins ++;
+                   i++;
+               }
+               else if ((a.slice(0,8) === "You Lose") || (a.slice(0,2) === "Ah")) {
+                   losses ++;
+                   i++;
+               }
+               else {
+                   ties ++;
+                   i++;
+               }
+               if (wins > losses) {
+                winMessage = "You're the winner!"
+            }
+            else if (wins < losses) {
+                winMessage = "You're the loser..."
+            }
+            else {
+                winMessage = "It's a tie! Good try!"
+            }
+
+            return "Total Results: " + winMessage + "<br>Wins: " + wins + " Ties: " + ties + " Losses: " + losses;
+
+
+
+
+
+              
+    }
+    else if (i === 5) {
+        i = 0;
+        wins = 0;
+        losses = 0;
+        ties = 0;
+        if ((a.slice(0,7) === "You Win") || (a.slice(0,7) === "cheater")) {
+            wins ++;
+            i++;
+            
+        }
+        else if ((a.slice(0,8) === "You Lose") || (a.slice(0,2) === "Ah")) {
+            losses ++;
+            i++;
+            
+        }
+        else {
+            ties ++;
+            i++;
+        }
+        
+        return " Wins: " + wins + " Ties: " + ties + " Losses: " + losses;
+    }
+}
 
 
 

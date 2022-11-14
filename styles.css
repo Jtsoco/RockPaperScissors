@@ -40,7 +40,7 @@ body{
 .middle {
     display: flex;
     width: 100%;
-    background-color: blanchedalmond;
+    
     flex: 1;
     margin-top: 0;
 
@@ -53,7 +53,7 @@ body{
     flex-direction: column;
     justify-content: center;
     margin: auto;
-    background-color: aqua;
+    
     flex: 1;
     align-items: center;
 }
@@ -87,7 +87,7 @@ body{
     max-height: 230px;
     margin-left: 25px;
     margin-bottom: 20px;
-    background-color: white;
+    
     
     
 }
@@ -101,7 +101,7 @@ body{
     display: flex;
     justify-content: center;
     width: auto;
-    background-color: pink;
+   
     flex: 1;
     margin: auto;
     padding-right: auto;
@@ -145,7 +145,7 @@ body{
     display: flex;
     margin: auto;
     justify-content: center;
-    background-color: azure;
+    
     flex: 1;
 }
 
@@ -155,6 +155,8 @@ body{
 
 .bottom {display: flex;
 justify-content: center;
+background-image: 
+linear-gradient(to top left, white, rgb(113, 113, 253));
 
 }
 .score, .playerDecision {
