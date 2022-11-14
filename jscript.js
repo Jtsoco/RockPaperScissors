@@ -60,7 +60,7 @@ function playRound(y, x) {
 //This is Javascript for image buttons
 
 
-
+let playerChoice;
 const rockImg = document.querySelector(".rockImg");
 //document.querySelector('rockImg').addEventListener("click", ) 
 rockImg.addEventListener('click', playerChoiceRock);
@@ -68,6 +68,7 @@ rockImg.addEventListener('click', playerChoiceRock);
 function playerChoiceRock(e) {console.log(e);
     let playerImgChoice = document.querySelector(".playerImgChoice"); 
     playerImgChoice.src = "images/rock.jpg";
+    playerChoice = "rock";
     
 
 
@@ -82,6 +83,7 @@ function playerChoiceScissors (e) {console.log(e);
     
 let playerImgChoice = document.querySelector(".playerImgChoice"); 
 playerImgChoice.src = "images/scissors.png";
+playerChoice = "scissors";
 return
 
 };
@@ -93,6 +95,7 @@ paperImg.addEventListener('click', playerChoicePaper);
 function playerChoicePaper(e) { console.log(e);
     let playerImgChoice = document.querySelector(".playerImgChoice"); 
 playerImgChoice.src = "images/paper.jpg";
+playerChoice = "paper"
 
 
 }
@@ -101,8 +104,21 @@ playerImgChoice.src = "images/paper.jpg";
 const run = document.querySelector(".run");
 run.addEventListener('click', runGame);
 let enemyImg = document.querySelector(".enemyImg")
+
+results = document.getElementById("results");
+
 function runGame(e) {
-    console.log(e);
+    runEnemy();
+   results.innerHTML = fightRound();
+
+
+
+};
+
+
+//Runs the enemy selection and puts the image in enemy box
+function runEnemy() {
+    
  enemyAnswer = getComputerChoice();
 if (enemyAnswer === "Rock") {
     enemyImg.src = "images/rock.jpg";
@@ -117,6 +133,35 @@ else if (enemyAnswer === "Scissors") {
 }
 else {"Error"}
 
+}
+
+function fightRound (y, x) {
+    y = (playerChoice).toLowerCase();
+    x = (enemyAnswer).toLowerCase();
+   if ( x === y) {
+       return "It's a tie!"
+   }
+   else if (y === "gun") {
+       return "cheater... I guess you win."
+   }
+   else if (((y === "rock") && (x === "paper")) 
+   || 
+   ((y === "paper") && (x === "scissors")) 
+   || ((y === "scissors") && (x === "rock"))) {
+       
+       return "You Lose!" + " " + x.charAt(0).toUpperCase() + x.slice(1) + " beats " + y.charAt(0).toUpperCase() + y.slice(1) + ".";
+   }
+   else if (((y === "paper") && (x === "rock")) 
+   || 
+   ((y === "scissors") && (x === "paper")) 
+   || ((y === "rock") && (x === "scissors"))) {
+       y.charAt(0) + y.split(1);
+       return "You Win!" + " " + y.charAt(0).toUpperCase() + y.slice(1) + " beats " + x.charAt(0).toUpperCase() + x.slice(1) + "."; 
+   }
+
+   else {
+       return "Ah oh no! You didn't enter anything. Let's call this a loss!"
+   }
 }
 
 
