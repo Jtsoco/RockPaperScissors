@@ -122,6 +122,19 @@ function runGame(e) {
 };
 
 
+
+//clear the game with the clear button
+const clearButton = document.querySelector(".clear");
+clearButton.addEventListener('click', clearGame)
+function clearGame() {
+    let playerImgChoice = document.querySelector(".playerImgChoice"); 
+    playerImgChoice.src = "images/questionMark.png";
+    enemyImg.src = "images/questionMark.png";
+    results.innerHTML = "";
+
+}
+
+
 //Runs the enemy selection and puts the image in enemy box
 function runEnemy() {
     
